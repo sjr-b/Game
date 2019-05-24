@@ -5,10 +5,11 @@ import java.awt.Rectangle;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException{
         Player player = new Player();
         Ball ball = new Ball(player);
-        Game game = new Game(ball, player);
+        Ball second = new Ball (player, 10);
+        Game game = new Game(ball, second, player);
         JFrame frame = new JFrame("Our Game");
         frame.add(game);
         frame.setSize(700, 700);

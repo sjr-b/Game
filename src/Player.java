@@ -9,34 +9,43 @@ public class Player {
     int y = 600;
     int xa = 0;
     int ya = 0;
+    int standardXaOrYa = 3;
     int width = 100;
-    int height = 20;
+    int height = 10;
 
     public Player() {
     }
 
     public void move() {
         x = x + xa;
-        //y = y + ya;
+        // y = y + ya; in case you want to be able to go up and down
     }
 
     public void paint(Graphics2D g) {
         g.fillRect(x, y, width,height);
     }
+
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            xa = -2;
+            xa = standardXaOrYa * -1;
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            xa = 2;
+            xa = standardXaOrYa;
         }
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            ya = -2;
+            ya = standardXaOrYa * -1;
         }
         if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            ya = 2;
+            ya = standardXaOrYa;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_1 && standardXaOrYa < 10){
+            standardXaOrYa++;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_2 && standardXaOrYa > 1){
+            standardXaOrYa--;
         }
     }
+
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             xa = 0;

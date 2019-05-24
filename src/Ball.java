@@ -15,14 +15,22 @@ public class Ball {
         ourPlayer = player;
     }
 
+    public Ball(Player player, int adjustment){
+        ourPlayer = player;
+        x =- adjustment;
+        y =- adjustment;
+    }
+
     public void paint(Graphics2D g) {
         g.fillOval(x,y,20,20);
     }
+
     public void move() {
         checkCollisions();
         x = x + xa;
         y = y + ya;
     }
+
     public void checkCollisions(){
         if(x == 680 || x == 0){
             xa = -xa;
