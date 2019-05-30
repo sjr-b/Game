@@ -17,8 +17,8 @@ public class Ball {
 
     public Ball(Player player, int adjustment){
         ourPlayer = player;
-        x =- adjustment;
-        y =- adjustment;
+        x -= 5 * adjustment;
+        y = 80;
     }
 
     public void paint(Graphics2D g) {

@@ -8,11 +8,13 @@ public class Game extends JPanel {
     public static Ball theBall;
     public static Ball second;
     public static Player ourPlayer;
+    public static Opponent ourOpponent;
 
-    public Game(Ball ball, Ball ball2, Player player) {
+    public Game(Ball ball, Ball ball2, Player player, Opponent opp) {
         theBall = ball;
         second = ball2;
         ourPlayer = player;
+        ourOpponent = opp;
 
         addKeyListener(new KeyListener() {
             @Override
@@ -21,11 +23,13 @@ public class Game extends JPanel {
             @Override
             public void keyReleased(KeyEvent e) {
                 ourPlayer.keyReleased(e);
+                ourOpponent.keyReleased(e);
             }
 
             @Override
             public void keyPressed(KeyEvent e) {
                 ourPlayer.keyPressed(e);
+                ourOpponent.keyPressed(e);
             }
         });
         setFocusable(true);
@@ -37,16 +41,18 @@ public class Game extends JPanel {
                 RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setColor(Color.DARK_GRAY);
         ourPlayer.paint(g2d);
+        ourOpponent.paint(g2d);
         g2d.setColor(Color.LIGHT_GRAY);
         theBall.paint(g2d);
-        g2d.setColor(Color.GRAY);
+        g2d.setColor(Color.BLUE);
         second.paint(g2d);
     }
 
     public void move(){
-        ourPlayer.move();
         theBall.move();
         second.move();
+        ourPlayer.move();
+        ourOpponent.move();
     }
 
 }
