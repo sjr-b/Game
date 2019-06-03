@@ -30,7 +30,7 @@ public class Player {
             xa = standardXaOrYa * -1;
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            xa = standardXaOrYa;
+            this.xa = standardXaOrYa;
         }
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             ya = standardXaOrYa * -1;

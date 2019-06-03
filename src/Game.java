@@ -39,12 +39,12 @@ public class Game extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setColor(Color.DARK_GRAY);
+        g2d.setBackground(Color.GREEN); // CHECK THIS CHECK THIS
+        g2d.setColor(Color.ORANGE);
         ourPlayer.paint(g2d);
         ourOpponent.paint(g2d);
-        g2d.setColor(Color.LIGHT_GRAY);
+        g2d.setColor(Color.PINK);
         theBall.paint(g2d);
-        g2d.setColor(Color.BLUE);
         second.paint(g2d);
     }
 

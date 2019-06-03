@@ -10,13 +10,16 @@ public class Ball {
     int xa = 2;
     int ya = 2;
     private Player ourPlayer;
+    private Player opponent;
 
-    public Ball(Player player){
+    public Ball(Player player, Player opp){
         ourPlayer = player;
+        opponent = opp;
     }
 
-    public Ball(Player player, int adjustment){
+    public Ball(Player player, Player opp, int adjustment){
         ourPlayer = player;
+        opponent = opp;
         x -= 5 * adjustment;
         y = 80;
     }
@@ -38,11 +41,11 @@ public class Ball {
         if(y == 0){
             ya = -ya;
         }
-        if(new Rectangle(x,y,20,20).intersects(ourPlayer.getRectangle())){
+        if(new Rectangle(x,y,20,20).intersects(ourPlayer.getRectangle()) || new Rectangle(x, y, 20, 20).intersects(opponent.getRectangle())){
             ya = -ya;
         }
-        if(y == 690){
-            System.exit(0);
+        if(y == 670){
+            ya = -ya;
         }
     }
 

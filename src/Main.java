@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) throws InterruptedException{
         Player player = new Player();
         Opponent opp = new Opponent();
-        Ball ball = new Ball(player);
-        Ball second = new Ball (player, 10);
+        Ball ball = new Ball(player, opp);
+        Ball second = new Ball (player, opp, 10);
         Game game = new Game(ball, second, player, opp);
         JFrame frame = new JFrame("Our Game");
         frame.add(game);

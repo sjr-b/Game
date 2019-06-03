@@ -3,6 +3,8 @@ import java.awt.event.KeyEvent;
 public class Opponent extends Player {
 
     public Opponent(){
+        x = 250;
+        y = 50;
     }
 
     public void keyPressed(KeyEvent e) {
