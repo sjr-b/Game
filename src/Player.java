@@ -26,7 +26,7 @@ public class Player {
     }
 
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+        if (e.getKeyCode() == KeyEvent.VK_LEFT && x + xa > 0) {
             xa = standardXaOrYa * -1;
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {

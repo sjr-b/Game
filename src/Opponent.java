@@ -20,10 +20,10 @@ public class Opponent extends Player {
         if (e.getKeyCode() == KeyEvent.VK_S) {
             ya = standardXaOrYa;
         }
-        if (e.getKeyCode() == KeyEvent.VK_1 && standardXaOrYa < 10){
+        if (e.getKeyCode() == KeyEvent.VK_PLUS || e.getKeyCode() == KeyEvent.VK_EQUALS && standardXaOrYa < 10){
             standardXaOrYa++;
         }
-        if (e.getKeyCode() == KeyEvent.VK_2 && standardXaOrYa > 1){
+        if (e.getKeyCode() == KeyEvent.VK_MINUS && standardXaOrYa > 1){
             standardXaOrYa--;
         }
     }
